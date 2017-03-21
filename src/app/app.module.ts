@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { FirebaseService } from './services/firebase.service';
 
 import { AppComponent } from './app.component';
@@ -20,6 +20,11 @@ export const firebaseConfig = {
   databaseURL: "https://fir-auth-demo-83503.firebaseio.com",
   storageBucket: "fir-auth-demo-83503.appspot.com",
   messagingSenderId: "821771124636"
+};
+
+const firebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Popup
 };
 
 const appRoutes: Routes = [
@@ -42,7 +47,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig,firebaseAuthConfig),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [FirebaseService],
