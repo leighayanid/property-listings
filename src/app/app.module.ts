@@ -31,6 +31,7 @@ const firebaseAuthConfig = {
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'listings', component: ListingsComponent},
+  {path: 'listing/:id', component: ListingComponent},
   {path: 'add-listing', component: AddListingComponent}
 ] 
 
