@@ -3,21 +3,22 @@
         <div class="col-md-5 col-md-offset-3">
             <form>
                 <legend>Add listing</legend>
+                <hr>
                 <div class="form-group">
                     <label for="">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" placeholder="Input title" required>
+                    <input type="text" class="form-control" name="title" ([ng-model])="title" id="title" placeholder="Input title" required>
                 </div>
                 <div class="form-group">
                     <label for="">City</label>
-                    <input type="text" class="form-control" name="city" id="city" placeholder="Input city" required>
+                    <input type="text" class="form-control" name="city" ([ng-model])="city" id="city" placeholder="Input city" required>
                 </div>
                 <div class="form-group">
                     <label for="">Owner</label>
-                    <input type="text" class="form-control" name="owner" id="owner" placeholder="Input owner" required>
+                    <input type="text" class="form-control" name="owner" ([ng-model])="owner" id="owner" placeholder="Input owner" required>
                 </div>
                 <div class="form-group">
                     <label for="">Type</label>
-                    <select name="type" id="inputType" class="form-control" required="required">
+                    <select name="type" id="inputType" ([ng-model])="type" class="form-control" required="required">
                         <option value="">Estate</option>
                         <option value="">Condo</option>
                         <option value="">Apartment</option>
@@ -25,11 +26,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">Price</label>
-                    <input type="text" class="form-control" name="price" id="price" placeholder="Input price" required>
+                    <input type="text" class="form-control" ([ng-model])="price" name="price" id="price" placeholder="Input price" required>
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>
-                    <input type="file" class="form-control" name="image" id="image" placeholder="Input image" required>
+                    <input type="file" class="form-control" ([ng-model])="image" name="image" id="image" placeholder="Input image" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
