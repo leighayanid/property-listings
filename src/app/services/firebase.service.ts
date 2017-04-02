@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 export class FirebaseService {
 
   listings: FirebaseListObservable<any[]>;
-  listing: FirebaseObjectObservable<any[]>;
+  listing: FirebaseObjectObservable<any>;
   folder: any;
 
   constructor(private af: AngularFire) {
@@ -23,7 +23,7 @@ export class FirebaseService {
   	return this.listing;
   }
 
-  addListing(listing){
+  addListing(listing: Listing){
     //create a root ref
    let storageRef = firebase.storage().ref();
    //loop through html element to find image id
@@ -40,11 +40,12 @@ export class FirebaseService {
 }
 
 interface Listing{
-	$key?:string,
-	title?:string,
-	type?:string,
-	image?:string,
-	city?:string,
-	owner?:string,
-	bedrooms?:string
+	$key?:string;
+	title?:string;
+	type?:string;
+	image?:string;
+	city?:string;
+	owner?:string;
+	bedrooms?:string;
+  path?:string;
 }
