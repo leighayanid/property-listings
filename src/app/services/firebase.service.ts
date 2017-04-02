@@ -28,12 +28,12 @@ export class FirebaseService {
    let storageRef = firebase.storage().ref();
    //loop through html element to find image id
    for(let selectedFile of [(<HTMLInputElement>document.getElementById('image')).files[0]]){
-     let path = '/${this.folder}/${selectedFile.name}';
+     let path = `/${this.folder}/${selectedFile.name}`;
      let iRef = storageRef.child(path);
      iRef.put(selectedFile).then((snapshot)=>{
        listing.image = selectedFile.name;
        listing.path = path;
-       return this.listing.push(listing);
+       return this.listings.push(listing);
      });
   }
 
