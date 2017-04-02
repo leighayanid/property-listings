@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 export class FirebaseService {
 
   listings: FirebaseListObservable<any[]>;
-  listing: FirebaseObjectObservable<any[]>;
+  listing: FirebaseObjectObservable<any>;
   folder: any;
 
   constructor(private af: AngularFire) {
@@ -28,23 +28,23 @@ export class FirebaseService {
    let storageRef = firebase.storage().ref();
    //loop through html element to find image id
    for(let selectedFile of [(<HTMLInputElement>document.getElementById('image')).files[0]]){
-     let path = '/${this.folder}/${selectedFile.name}';
+     let path = `/${this.folder}/${selectedFile.name}`;
      let iRef = storageRef.child(path);
      iRef.put(selectedFile).then((snapshot)=>{
        listing.image = selectedFile.name;
        listing.path = path;
-       return this.listing.push(listing);
+       return this.listings.push(listing);
      });
+    }
   }
-
 }
 
 interface Listing{
-	$key?:string,
-	title?:string,
-	type?:string,
-	image?:string,
-	city?:string,
-	owner?:string,
-	bedrooms?:string
+	$key?:string;
+	title?:string;
+	type?:string;
+	image?:string;
+	city?:string;
+	owner?:string;
+	bedrooms?:string;
 }
