@@ -14,7 +14,7 @@ export class ListingComponent implements OnInit {
 	listing:any;
 	imageUrl:any;
 
-  constructor(private firebaseService: FirebaseService, private router:Router, private route:ActivatedRoute) { }
+  constructor(private firebaseService: FirebaseService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   	this.id = this.route.snapshot.params['id'];

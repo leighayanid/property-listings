@@ -23,7 +23,7 @@ export class FirebaseService {
   	return this.listing;
   }
 
-  addListing(listing: Listing){
+  addListing(listing){
     //create a root ref
    let storageRef = firebase.storage().ref();
    //loop through html element to find image id
@@ -35,8 +35,8 @@ export class FirebaseService {
        listing.path = path;
        return this.listings.push(listing);
      });
+    }
   }
-
 }
 
 interface Listing{
@@ -47,5 +47,4 @@ interface Listing{
 	city?:string;
 	owner?:string;
 	bedrooms?:string;
-  path?:string;
 }
