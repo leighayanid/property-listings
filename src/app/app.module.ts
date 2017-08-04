@@ -16,11 +16,12 @@ import { EditListingComponent } from './components/edit-listing/edit-listing.com
 import { ListingComponent } from './components/listing/listing.component';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBuEu56veWd9wGQ0kcIHIwI5Ru_uNVdNmU",
-  authDomain: "fir-auth-demo-83503.firebaseapp.com",
-  databaseURL: "https://fir-auth-demo-83503.firebaseio.com",
-  storageBucket: "fir-auth-demo-83503.appspot.com",
-  messagingSenderId: "821771124636"
+  apiKey: "AIzaSyD_Xyc-s7vCKhmYmGBv8twfhvuuzzwYTqE",
+    authDomain: "property-listings-15555.firebaseapp.com",
+    databaseURL: "https://property-listings-15555.firebaseio.com",
+    projectId: "property-listings-15555",
+    storageBucket: "property-listings-15555.appspot.com",
+    messagingSenderId: "785815205950"
 };
 
 const firebaseAuthConfig = {
